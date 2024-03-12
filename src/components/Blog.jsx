@@ -1,6 +1,6 @@
 import { BsBookmark } from "react-icons/bs";
 
-const Blog = ({ blog, handleBookmarks }) => {
+const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
   const {
     title,
     cover,
@@ -35,6 +35,12 @@ const Blog = ({ blog, handleBookmarks }) => {
           <span key={idx}>#{hash}</span>
         ))}
       </p>
+      <button
+        onClick={() => handleMarkAsRead(reading_time)}
+        className="text-violet-700 text-xl font-semibold underline"
+      >
+        Mark as read
+      </button>
     </div>
   );
 };
