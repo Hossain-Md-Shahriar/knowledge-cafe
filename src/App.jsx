@@ -1,8 +1,14 @@
 import Blogs from "./components/Blogs";
 import Bookmarks from "./components/Bookmarks";
 import Header from "./components/Header";
+import { useState } from "react";
 
 function App() {
+  const [bookmarks, setBookmarks] = useState([]);
+
+  const handleBookmarks = (title) => {
+      setBookmarks([...bookmarks, title]);
+  }
 
   return (
     <>
@@ -10,8 +16,8 @@ function App() {
         <div className="mx-4">
           <Header />
           <div className="md:flex md:gap-4">
-            <Blogs />
-            <Bookmarks />
+            <Blogs handleBookmarks={handleBookmarks} />
+            <Bookmarks bookmarks={bookmarks} />
           </div>
         </div>
       </div>
