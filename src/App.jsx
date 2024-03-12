@@ -9,7 +9,7 @@ function App() {
       <div className="container mx-auto">
         <div className="mx-4">
           <Header />
-          <div className="md:flex">
+          <div className="md:flex md:gap-4">
             <Blogs />
             <Bookmarks />
           </div>
